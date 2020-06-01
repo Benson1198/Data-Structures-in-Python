@@ -1,19 +1,22 @@
+# Node of a Singly Linked List
 class Node:
-    def __init__(self,data):
+    def __init__(self):
         self.data = data
         self.next = None
     
-a = Node(1)
-b = Node(2)
-c = Node(3)
-
-a.next = b
-b.next = c
-
-
-print(a.data)
-print(b.data)
-print(c.data)
-print()
-print(a.next)
-print(a.next.data)
+    def set_data(self,data):
+        self.data = data
+    
+    def get_data(self):
+        return self.data
+    
+    def set_next(self,next):
+        self.next = next
+    
+    def get_next(self):
+        return self.next
+    
+    def has_next(self):
+        return self.next != None
+    
+    
