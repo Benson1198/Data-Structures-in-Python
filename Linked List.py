@@ -18,5 +18,20 @@ class Node:
     
     def has_next(self):
         return self.next != None
+
     
+    # Traverseing Lined List
+
+    def list_length(self):
+        current = self.head
+        count = 0
+
+        while current != None:
+            count += 1
+            # To print data
+            # print(current.get_data()) 
+            current = current.get_next()
+
+        return count
+
     
