@@ -84,4 +84,12 @@ class Node:
             new_node.set_next(current.get_next())
             current.set_next(new_node)
             self.length += 1
-        
+
+    # Method to delete the first node of LL
+
+    def delete_from_beginning(self):
+        if sel.length == 0:
+            print('The list is empty')
+        else:
+            self.head = self.head.get_next()
+            self.length -= 1
