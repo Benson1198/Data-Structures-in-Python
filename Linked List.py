@@ -50,5 +50,16 @@ class Node:
         self.length += 1
 
      
+    # Method for  inserting at the end of a LL
 
+    def insert_at_end(self,data):
+        new_node = Node()
+        new_node.set_data(data)
 
+        current = self.head
+
+        while current.get_next() != None:
+            current = current.get_next()
+        
+        current.set_next(new_node)
+        self.length += 1
