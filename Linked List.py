@@ -63,3 +63,25 @@ class Node:
         
         current.set_next(new_node)
         self.length += 1
+
+    # Method for inserting at any position in LL
+
+    def insert_at_position(self,pos,data):
+        if pos > self.length or pos < 0:
+            return None
+        elif pos == 0:
+            self.insert_at_end(data)
+        elif pos == self.length:
+            self.insert_at_end(data)
+        else:
+            new_node = Node()
+            new_node.set_data(data)
+            count = 1
+            current = self.head
+            while count < pos-1:
+                count += 1
+                current = current.get_next()
+            new_node.set_next(current.get_next())
+            current.set_next(new_node)
+            self.length += 1
+        
