@@ -93,3 +93,19 @@ class Node:
         else:
             self.head = self.head.get_next()
             self.length -= 1
+    
+    # Delete the last node of LL
+
+    def delete_last_node(self):
+        if self.length ==0:
+            print("The list is empty")
+        else:
+            currentnode = self.head
+            prevnode = self.head
+
+            while currentnode.get_next() != None:
+                prevnode = currentnode
+                currentnode = currentnode.get_next()
+            
+            prevnode.set_next(None)
+            self.length -= 1
