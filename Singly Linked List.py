@@ -142,7 +142,7 @@ class Node:
 
         while currentnode.get_next() != None or currentnode.get_data() != value:
             if currentnode.get_data() == value:
-                prevnode.set_next() = currentnode.get_next()
+                prevnode.set_next(currentnode.get_next())
                 self.length -= 1
                 return
             else:
@@ -153,4 +153,44 @@ class Node:
     # Method to delete a node at a particular location
 
     def delete_at_position(self,pos):
+        count = 0
+        currentnode = self.head 
+        prevnode = self.head
+        if pos > self.length or pos < 0:
+            print('The position does not exist. Please enter a valid position.')
+        else:
+            while currentnode.next != None or count < pos:
+                count += 1
+                if count == pos:
+                    prevnode.set_next(currentnode.get_next())
+                    self.length -= 1
+                    return 
+                else:
+                    prevnode = currentnode
+                    currentnode = currentnode.get_next()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
