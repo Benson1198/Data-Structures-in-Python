@@ -109,3 +109,30 @@ class Node:
             
             prevnode.set_next(None)
             self.length -= 1
+
+    # Delete by node from LL
+
+    def delete_by_node(self,node):
+        if self.length == 0:
+            raise ValueError('List is Empty')
+        else:
+            current = self.head
+            previous = None
+            found = False
+
+            while not found:
+                if current == node:
+                    found = True
+                elif current is None:
+                    raise ValueError("Node not in Linked List")
+                else:
+                    previous = current
+                    current = current.get_next()
+        if previous is None:
+            self.head = current.get_next()
+        else:
+            previous.set_next(current.get_next())
+        self.length -= 1
+
+    
+
