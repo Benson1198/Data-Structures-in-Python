@@ -134,5 +134,20 @@ class Node:
             previous.set_next(current.get_next())
         self.length -= 1
 
-    
+    # Delete by data from LL
 
+    def delete_by_data(self,value):
+        currentnode = self.head
+        prevnode = self.head
+
+        while currentnode.get_next() != None or currentnode.get_data() != value:
+            if currentnode.get_data() == value:
+                prevnode.set_next() = currentnode.get_next()
+                self.length -= 1
+                return
+            else:
+                prevnode = currentnode
+                currentnode = currentnode.get_next()
+            print("The value provided is not present.")
+
+    
