@@ -89,3 +89,15 @@ class Node:
                 new_node.set_prev(temp)
                 temp.get_next().set_prev(new_node)
                 temp.set_next(new_node)
+
+    # Deleting node at a given position
+    
+    def delete_at_given_position(self,index):
+        temp = self.get_node(index)
+        if temp:
+            temp = temp.get_prev().set_next(temp.get_next())
+            if temp.get_next():
+                temp.get_next().set_prev(temp.get_prev())
+                temp.set_prev(None)
+                temp.set_next(None)
+                temp.set_data(None)
