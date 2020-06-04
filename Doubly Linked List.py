@@ -72,3 +72,20 @@ class Node:
                 break
             i += 1
         return currentNode
+
+    # Insert at given position in DLL
+    def insert_at_given_position(self,index,data):
+        new_node = Node(data)
+
+        if self.head == None or index == 0:
+            self.insert_at_beginning(data)
+        elif index > 0:
+            temp = self.get_node(index)
+
+            if temp == None or temp.get_next() == None:
+                self.insert_at_end(data)
+            else:
+                new_node.set_next(temp.get_next())
+                new_node.set_prev(temp)
+                temp.get_next().set_prev(new_node)
+                temp.set_next(new_node)
