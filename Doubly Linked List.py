@@ -59,3 +59,16 @@ class Node:
                 current = current.get_next()
             current.set_next(Node(data,None,current))
             self.tail = current.get_next()
+
+    # Get node by index
+    def get_node(self,index):
+        currentNode = self.head
+        if currentNode == None:
+            return None
+        i = 0
+        while i < index and currentNode.get_next() != None:
+            currentNode = currentNode.get_next()
+            if currentNode == Node:
+                break
+            i += 1
+        return currentNode
