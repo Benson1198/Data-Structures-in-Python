@@ -32,15 +32,30 @@ class Node:
         return "Node [Data = {}]".format(self.data)  
 
     
-    # Insert Node at Beginning od Doubly Linked List
+    # Insert Node at Beginning of Doubly Linked List
 
     def insert_at_beginning(self,data):
         new_node = Node(data,None,None)
 
         if self.head == None:
-            self.head = new_node
+            self.head = self.tail = new_node
         else:
             new_node.set_prev(None)
             new_node.set_next(self.head)
             self.head.set_prev(new_node)
             self.head = new_node
+
+
+    # Insert at the end of Doubly Linked List
+
+    def insert_at_end(self,data):
+        if self.head == None:
+            self.head = Node(data)
+            self.tail = self.head
+        else:
+            current = self.head
+
+            while current.get_next() != None:
+                current = current.get_next()
+            current.set_next(Node(data,None,current))
+            self.tail = current.get_next()
