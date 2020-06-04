@@ -101,3 +101,19 @@ class Node:
                 temp.set_prev(None)
                 temp.set_next(None)
                 temp.set_data(None)
+    
+    # Delete with given data DLL
+
+    def delete_with_data(self,data):
+        temp = self.head
+        while temp != None:
+            if temp.get_data() == data:
+                # if it's not the first element
+                if temp.get_next() != None:
+                    temp.get_next().set_next(temp.get_next())
+                    temp.get_next().set_prev(temp.get_prev())
+                else:
+                    # otherwise we have no prev, head is the next one, and prev becomes None
+                    self.head = temp.get_next()
+                    temp.get_next().set_prev(None)
+                temp = temp.get_next()
